@@ -14,6 +14,7 @@ func HTTPServe(ctx *cli.Context) error {
 	app.RedirectTrailingSlash = false
 	app.Use(gin.Recovery(), gin.Logger())
 
-	routes.InitPingRoutes(app)
+	routes.InitRoutePing(app)
+	routes.InitRouteAuth(app)
 	return app.Run(":" + configs.HttpPort)
 }

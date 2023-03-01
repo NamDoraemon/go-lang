@@ -5,7 +5,7 @@ import (
 	handlers "github.com/namth/go-examples/handlers/ping"
 )
 
-func InitPingRoutes(route *gin.Engine) {
+func InitRoutePing(route *gin.Engine) {
 	pingHandler := handlers.NewHandlerPing()
 	groupRoute := route.Group("/ping")
 

@@ -5,24 +5,22 @@ import (
 )
 
 type Response struct {
-	Method     string      `json:"method"`
-	StatusCode int         `json:"status_code"`
-	Status     bool        `json:"status"`
-	Message    string      `json:"message"`
-	Data       interface{} `json:"data"`
+	Status  bool        `json:"status"`
+	Message string      `json:"message"`
+	Data    interface{} `json:"data"`
 }
 
-func APIResponse(ctx *gin.Context, Message string, StatusCode int, Method string, Data interface{}) {
+func APIResponse(ctx *gin.Context, Message string, StatusCode int, Data interface{}) {
 	jsonResponse := &Response{
-		StatusCode: StatusCode,
-		Method:     Method,
-		Message:    Message,
-		Data:       Data,
+		Message: Message,
+		Data:    Data,
 	}
 
-	if StatusCode >= 400 {
+	if StatusCode >= 0 {
+		jsonResponse.Status = false
 		ctx.AbortWithStatusJSON(StatusCode, jsonResponse)
 	} else {
+		jsonResponse.Status = true
 		ctx.JSON(StatusCode, jsonResponse)
 	}
 }
