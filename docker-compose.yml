@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: go-example:0.0.1
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8000:8000"
+    networks:
+      - bridge
+    working_dir: /root
+
+networks:
+  bridge:
+    driver: bridge
