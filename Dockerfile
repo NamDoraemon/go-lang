@@ -11,11 +11,11 @@ RUN apk --no-cache add ca-certificates curl tzdata
 
 WORKDIR /root
 
-COPY --from=builder /root/go-examples /root
+COPY --from=builder /root/fm.auth /root
 
 # for grpc
 EXPOSE 6000
 # for http
 EXPOSE 6001
 
-CMD ["./go-examples", "start"]
+CMD ["./fm.auth", "start"]
