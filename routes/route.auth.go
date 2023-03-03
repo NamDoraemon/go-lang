@@ -7,7 +7,7 @@ import (
 
 func InitRouteAuth(route *gin.Engine) {
 	authHandler := handlers.NewHandlerAuth()
-	groupRoute := route.Group("/auth")
+	groupRoute := route.Group("/login")
 
-	groupRoute.POST("/login", authHandler.LoginHandler)
+	groupRoute.POST("", authHandler.LoginHandler)
 }

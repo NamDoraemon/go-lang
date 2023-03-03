@@ -12,7 +12,7 @@ import (
 )
 
 func GRPCServe(ctx *cli.Context) error {
-	configs := config.GetConfigProduction()
+	configs := config.GetConfig()
 	listen, err := net.Listen("tcp", ":"+configs.GrpcPort)
 	if err != nil {
 		return err
