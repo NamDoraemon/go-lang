@@ -1,7 +1,7 @@
 package routes
 
 import (
-	handlers "auth/handlers/ping"
+	"fm.auth/handlers"
 	"github.com/gin-gonic/gin"
 )
 
