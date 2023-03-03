@@ -38,6 +38,9 @@ func (c *Config) LoadDefault() {
 	if c.GrpcPort == "" {
 		c.GrpcPort = "6000"
 	}
+	if c.UrlLoginToFM == "" {
+		c.UrlLoginToFM = "http://localhost:4000/auth/token"
+	}
 }
 
 func (c *Config) Validate() error {
