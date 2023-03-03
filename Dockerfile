@@ -18,4 +18,4 @@ EXPOSE 6000
 # for http
 EXPOSE 6001
 
-CMD ["./fm.auth", "start"]
+CMD ["./fm.auth", "serve"]
