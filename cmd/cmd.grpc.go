@@ -1,8 +1,8 @@
 package cmd
 
 import (
+	"fm.auth/config"
 	"fmt"
-	"github.com/namth/go-examples/config"
 	"github.com/urfave/cli/v2"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"

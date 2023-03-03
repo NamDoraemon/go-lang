@@ -6,8 +6,9 @@ import (
 )
 
 type Config struct {
-	HttpPort string `env:"HTTP_PORT" default:"6001"`
-	GrpcPort string `env:"GRPC_PORT" default:"6000"`
+	HttpPort     string `env:"HTTP_PORT" default:"6001"`
+	GrpcPort     string `env:"GRPC_PORT" default:"6000"`
+	UrlLoginToFM string `env:"URL_LOGIN_TO_FM" default:""`
 }
 
 var configInstance *Config

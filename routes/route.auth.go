@@ -1,8 +1,8 @@
 package routes
 
 import (
+	"fm.auth/handlers"
 	"github.com/gin-gonic/gin"
-	handlers "github.com/namth/go-examples/handlers/auth"
 )
 
 func InitRouteAuth(route *gin.Engine) {

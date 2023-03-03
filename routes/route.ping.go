@@ -1,8 +1,8 @@
 package routes
 
 import (
+	handlers "auth/handlers/ping"
 	"github.com/gin-gonic/gin"
-	handlers "github.com/namth/go-examples/handlers/ping"
 )
 
 func InitRoutePing(route *gin.Engine) {

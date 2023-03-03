@@ -1,8 +1,8 @@
 package main
 
 import (
+	"fm.auth/cmd"
 	"fmt"
-	"github.com/namth/go-examples/cmd"
 )
 
 func main() {

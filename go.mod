@@ -1,4 +1,4 @@
-module github.com/namth/go-examples
+module fm.auth
 
 go 1.18
 

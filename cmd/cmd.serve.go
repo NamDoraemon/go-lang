@@ -1,10 +1,10 @@
 package cmd
 
 import (
+	"fm.auth/config"
+	"fm.auth/routes"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/namth/go-examples/config"
-	"github.com/namth/go-examples/routes"
 	"github.com/urfave/cli/v2"
 )
 

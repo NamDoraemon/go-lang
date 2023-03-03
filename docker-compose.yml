@@ -5,11 +5,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: go-example:0.0.1
+    image: fm.auth:0.0.1
     restart: unless-stopped
     tty: true
+    env_file: .env
     ports:
-      - "8000:8000"
+      - "8000:6001"
     networks:
       - bridge
     working_dir: /root

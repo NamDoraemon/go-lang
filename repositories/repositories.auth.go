@@ -4,12 +4,14 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
+	"fm.auth/config"
+	"fm.auth/entities"
 	"fmt"
-	"github.com/namth/go-examples/entities"
 	"net/http"
 )
 
 func RepoLogin(email string, password string) (error, string) {
+	configs := config.GetConfig()
 	loginReq := entities.Login{Email: email, Password: password}
 
 	// Chuyển đối tượng User thành JSON
@@ -19,7 +21,7 @@ func RepoLogin(email string, password string) (error, string) {
 		return err, ""
 	}
 
-	resp, err := http.Post("https://fm-api.buildtab.vn/auth/token", "application/json", bytes.NewBuffer(jsonBody))
+	resp, err := http.Post(configs.UrlLoginToFM, "application/json", bytes.NewBuffer(jsonBody))
 	if err != nil {
 		fmt.Println("Lỗi khi gọi API: ", err)
 		return err, ""
