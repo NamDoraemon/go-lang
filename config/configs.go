@@ -31,6 +31,8 @@ func GetConfig() *Config {
 
 func (c *Config) LoadFromEnv() {
 	fmt.Println(os.Getenv("URL_LOGIN_TO_FM"))
+	fmt.Println(os.Getenv("HTTP_PORT"))
+	fmt.Println(os.Getenv("GRPC_PORT"))
 	c.HttpPort = os.Getenv("HTTP_PORT")
 	c.GrpcPort = os.Getenv("GRPC_PORT")
 	c.UrlLoginToFM = os.Getenv("URL_LOGIN_TO_FM")
