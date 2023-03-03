@@ -21,7 +21,7 @@ func RepoLogin(email string, password string) (error, string) {
 		return err, ""
 	}
 
-	fmt.Println(configs.UrlLoginToFM)
+	fmt.Println(configs)
 	resp, err := http.Post(configs.UrlLoginToFM, "application/json", bytes.NewBuffer(jsonBody))
 	if err != nil {
 		fmt.Println("Lỗi khi gọi API: ", err)
