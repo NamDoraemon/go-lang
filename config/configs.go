@@ -3,6 +3,7 @@ package config
 import (
 	"log"
 	"sync"
+	"os"
 )
 
 type Config struct {
@@ -28,7 +29,9 @@ func GetConfig() *Config {
 }
 
 func (c *Config) LoadFromEnv() {
-
+	c.HttpPort = os.Getenv("HTTP_PORT")
+	c.GrpcPort = os.Getenv("GRPC_PORT")
+	c.UrlLoginToFM = os.Getenv("URL_LOGIN_TO_FM")
 }
 
 func (c *Config) LoadDefault() {
