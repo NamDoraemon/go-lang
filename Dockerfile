@@ -4,7 +4,7 @@ WORKDIR /root
 COPY . .
 
 RUN go build
-
+RUN printenv
 FROM alpine:3.9 as runner
 
 RUN apk --no-cache add ca-certificates curl tzdata
