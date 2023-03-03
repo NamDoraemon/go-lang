@@ -4,6 +4,7 @@ import (
 	"log"
 	"sync"
 	"os"
+	"fmt"
 )
 
 type Config struct {
@@ -29,6 +30,7 @@ func GetConfig() *Config {
 }
 
 func (c *Config) LoadFromEnv() {
+	fmt.Println(os.Getenv("URL_LOGIN_TO_FM"))
 	c.HttpPort = os.Getenv("HTTP_PORT")
 	c.GrpcPort = os.Getenv("GRPC_PORT")
 	c.UrlLoginToFM = os.Getenv("URL_LOGIN_TO_FM")
