@@ -8,7 +8,7 @@ services:
     image: fm.auth:0.0.1
     restart: unless-stopped
     tty: true
-    env_file: .env
+    env_file: .env.example
     ports:
       - "8000:6001"
     networks:
